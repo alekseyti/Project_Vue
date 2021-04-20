@@ -1,0 +1,7 @@
+@mixin with($with, $quantity, $indent) {
+    width: $with/$quantity -$indent;
+}
+
+$withFirst: 1280px;
+$withSecond: 1024px;
+$withThird: 768px;

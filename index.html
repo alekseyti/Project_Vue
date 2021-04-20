@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Интернет-магазин</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container" id="app">
+        <header>
+            <div class="centered">
+                <div class="centeredHeader">
+                    <div class="logo">
+                        <img src="img/logo.png" alt="logo">
+                    </div>
+
+                    <nav class="searchNav">
+                        <search></search>
+                    </nav>
+
+                    <div class="cartMain">
+                        <button class="btn-cart" @click="showCart = !showCart" type="button"><img src="img/cart.png" alt=""></button>
+                        <cart :cart-items="cartItems"
+                        :visibility="showCart"
+                        @remove="remove"></cart>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <main>
+            <nav class="mainNav">
+                <div class="centered">
+                    <div class="centeredMainNav">
+                        <a href="#">Home</a>
+                        <a href="#">Sale</a>
+                        <a href="#">Handbags</a>
+                        <a href="#">Wallets</a>
+                        <a href="#">Accessories</a>
+                        <a href="#">Mens Store</a>
+                        <a href="#">Shoes</a>
+                        <a href="#">Vintage</a>
+                        <a href="#">Services</a>
+                        <a href="#">Contact us</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="banner">
+                <div class="centered">
+                    <div class="bannerMain">
+                        <img src="img/layer1.png" alt="">
+                        <div class="bannerText">
+                            <h2>Cowhide Standard Crew</h2>
+                            <p>White coloured, short-sleeved, printed T-shirt for men by Levi's. This crew-neck T-shirt
+                                is
+                                made of organic cotton and comes in a regular fit. </p>
+                            <button>Shop now</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="centered">
+                <div class="shop">
+                    <figure class="shopItem">
+                        <a href="#"><img src="img/layer5.png" alt="" class="shopImg"></a>
+                        <figcaption class="shopItemText">
+                            BRANDED SHOES
+                        </figcaption>
+                        <a href="#" class="button">SHOP</a>
+
+                    </figure>
+
+                    <figure class="shopItem">
+                        <a href="#"><img src="img/layer5.png" alt="" class="shopImg"></a>
+                        <figcaption class="shopItemText">
+                            BRANDED TSHIRTS
+                        </figcaption>
+                        <a href="#" class="button">SHOP</a>
+
+
+                    </figure>
+
+                    <figure class="shopItem">
+                        <a href="#"><img src="img/layer5.png" alt="" class="shopImg"></a>
+                        <figcaption class="shopItemText">
+                            BRANDED SHOES
+                        </figcaption>
+                        <a href="#" class="button">SHOP</a>
+                    </figure>
+                </div>
+            </div>
+
+
+            <div class="category">
+                <div class="centered">
+                    <div class="categoryText">
+                        FEATURED PRODUCTS
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="centered">
+                <products :products="filtered"  @add-product="addProduct"></products>
+
+            </div>
+
+
+
+
+
+        </main>
+
+
+
+        <footer>
+            <div class="centered">
+                <div class="mainFooter">
+                    <section class="footerItem">
+                        <h2>FEATURED SALE</h2>
+                        <nav class="footerNav">
+                            <a href="#">Alexis Hudson</a>
+                            <a href="#">American Apparel</a>
+                            <a href="#">Ben Sherman</a>
+                            <a href="#">Big Buddha</a>
+                            <a href="#">Chanel</a>
+                            <a href="#">Christian Audigier</a>
+                            <a href="#">Coach</a>
+                            <a href="#">Cole Haan</a>
+                        </nav>
+                    </section>
+    
+                    <section class="footerItem">
+                        <h2>MENS STORE</h2>
+                        <nav class="footerNav">
+                            <a href="#">Alexis Hudson</a>
+                            <a href="#">American Apparel</a>
+                            <a href="#">Ben Sherman</a>
+                            <a href="#">Big Buddha</a>
+                            <a href="#">Chanel</a>
+                            <a href="#">Christian Audigier</a>
+                            <a href="#">Coach</a>
+                            <a href="#">Cole Haan</a>
+                        </nav>
+                    </section>
+    
+    
+    
+                    <section class="footerItem">
+                        <h2>WOMEN STORE</h2>
+                        <nav class="footerNav">
+                            <a href="#">Alexis Hudson</a>
+                            <a href="#">American Apparel</a>
+                            <a href="#">Ben Sherman</a>
+                            <a href="#">Big Buddha</a>
+                            <a href="#">Chanel</a>
+                            <a href="#">Christian Audigier</a>
+                            <a href="#">Coach</a>
+                            <a href="#">Cole Haan</a>
+                        </nav>
+                    </section>
+    
+                    <section class="footerItem">
+                        <h2>QUICK LINKS</h2>
+                        <nav class="footerNav">
+                            <a href="#">Alexis Hudson</a>
+                            <a href="#">American Apparel</a>
+                            <a href="#">Ben Sherman</a>
+                            <a href="#">Big Buddha</a>
+                            <a href="#">Chanel</a>
+                            <a href="#">Christian Audigier</a>
+                            <a href="#">Coach</a>
+                            <a href="#">Cole Haan</a>
+                        </nav>
+                    </section>
+                </div>
+            </div>
+
+            <div class="footerCopyright">
+                <div class="centered">
+                    <div class="copyright">
+                        Copyright © 2013 Css Author
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/ProductComponent.js"></script>
+    <script src="js/CartComponent.js"></script>
+    <script src="js/SearchComponent.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
